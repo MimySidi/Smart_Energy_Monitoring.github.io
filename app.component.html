@@ -1,0 +1,24 @@
+
+<mat-drawer-container *ngIf="loggedIn">
+    <mat-drawer mode="side" [opened]="sideBarOpen">
+      <!-- <mat-drawer mode="side" opened="true"> -->
+        <app-sidenav></app-sidenav>
+    </mat-drawer>
+    <mat-drawer-content>
+      <app-header (toggleSidebarForMe)="sideBarToggler()"></app-header>
+    
+      
+      <router-outlet></router-outlet>
+     
+    </mat-drawer-content>
+  </mat-drawer-container>
+
+  <div *ngIf="!loggedIn">
+    <router-outlet></router-outlet>
+  </div>
+  
+  
+<div>
+  <router-outlet></router-outlet>
+
+</div>
